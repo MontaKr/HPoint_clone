@@ -81,7 +81,7 @@ const QuickBarWrap = styled.div`
   }
 
   .DivDivDiv {
-    position: relative;
+    /* position: relative; */
     width: 80px;
     height: 38px;
     font-family: "Noto Sans KR";
