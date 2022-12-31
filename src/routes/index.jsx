@@ -3,6 +3,7 @@ import SignUp from '../pages/SignUp';
 import Header from '../components/header/Header';
 import Footer from '../components/footer/Footer';
 import Quickbar from '../components/quickBar/QuickBar';
+import QuickButton from '../components/quickButton/QuickButton';
 
 
 function RootRouter () {
@@ -14,6 +15,7 @@ function RootRouter () {
       </Routes>
       <Footer/>
       <Quickbar/>
+      <QuickButton/>
     </BrowserRouter>
   )
 }

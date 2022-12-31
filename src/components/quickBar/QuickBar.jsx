@@ -150,6 +150,10 @@ const QuickBarWrap = styled.div`
     color: #444;
     letter-spacing: -.5px;
     padding-top: 52px;
+    text-decoration-color: rgb(68,68,68);
+    text-decoration-style: solid;
+    text-decoration-thickness: auto;
+    text-size-adjust: 100%;
   }
 
   .DivDivUlLi2 {
@@ -273,5 +277,26 @@ const QuickBarWrap = styled.div`
     color: #444;
     letter-spacing: -.5px;
     padding-top: 52px;
+  }
+
+  /* 호버 */
+  .DivDivUlLi1Anchor:hover {
+    background-image: url(https://www.h-point.co.kr/assets/app/img/common/ic_quick_join_on.png);
+    color: #4e2bf4;
+  }
+
+  .DivDivUlLi2Anchor:hover {
+    background-image: url(https://www.h-point.co.kr/assets/app/img/common/ic_quick_appdown_on.png);
+    color: #4e2bf4;
+  }
+
+  .DivDivUlLi4Anchor:hover {
+    background-image: url(https://www.h-point.co.kr/assets/app/img/common/ic_quick_event_on.png);
+    color: #4e2bf4;
+  }
+
+  .DivDivUlLi5Anchor:hover {
+    background-image: url(https://www.h-point.co.kr/images_customer/icon/ic_quick_talk_2.png);
+    color: #4e2bf4;
   }
 `
