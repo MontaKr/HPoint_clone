@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const array = [{
   num : 1,
@@ -89,13 +90,15 @@ function SignUp () {
                       </span>
                     </a>
                   </li>
-                  <li className='SignUpSelectDivDivDiv1UlLi'>
-                    <a className='SignUpSelectDivDivDiv1UlLiAnchorPhone'>
-                      <span className='SignUpSelectDivDivDiv1UlLiAnchorSpan'>
-                        휴대폰 인증
-                      </span>
-                    </a>
-                  </li>
+                  <Link to='/SingUpRegi' style={{textDecoration : 'none' ,color: 'inherit'}}>
+                    <li className='SignUpSelectDivDivDiv1UlLi'>
+                      <a className='SignUpSelectDivDivDiv1UlLiAnchorPhone'>
+                        <span className='SignUpSelectDivDivDiv1UlLiAnchorSpan'>
+                          휴대폰 인증
+                        </span>
+                      </a>
+                    </li>
+                  </Link>
                   <li className='SignUpSelectDivDivDiv4UlLi'>
                     <a className='SignUpSelectDivDivDiv1UlLiAnchorIpin'>
                       <span className='SignUpSelectDivDivDiv1UlLiAnchorSpan'>

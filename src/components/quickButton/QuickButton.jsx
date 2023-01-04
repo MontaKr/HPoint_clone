@@ -69,7 +69,7 @@ const QuickButtonWrap = styled.div`
 
   .DivBtn {
     opacity: ${props=>props.showButton===true?'1':'0'};
-    transition: ${props=>props.showButton===true?'opacity 500ms':'opacity 500ms , visibility 500ms'};
+    transition: ${props=>props.showButton===true?'opacity 1000ms':'opacity 1000ms , visibility 1000ms'};
     visibility: ${props=>props.showButton===true?'auto':'hidden'};
     position: absolute;
     right: 30px;
