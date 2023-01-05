@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import React, {useState} from 'react';
-import Select from 'react-select';
+import React, {useEffect, useState} from 'react';
+import axios from 'axios';
 
 function SignUpRegi () {
 
@@ -32,9 +32,17 @@ function SignUpRegi () {
     else {
       setCheckID(false)
     }
-    }
-    
+  }
 
+  // 중복 체크
+  // const ConnectCheck = (e) => {
+  //   axios ({
+  //     method : 'get',
+  //     url : `http://firesea.p-e.kr/api/idCheck/1111`
+  //   }).then((response)=>{
+  //     console.log('결과 :', response.data.responseMessage)
+  //   })
+  // }
 
   return (
     <SignUpRegiWrap isIDFocused={isIDFocused} checkID={checkID}>

@@ -11,6 +11,9 @@ function Header () {
         <HeaderLeft/>
         <HeaderRight/>
       </div>
+      <div className='Hidden'>
+
+      </div>
     </HeaderRoot>
   )
 }
@@ -37,6 +40,15 @@ const HeaderRoot = styled.div`
     height: 100%;
     padding: 40px 30px 0 30px;
     margin: 0 auto;
+  }
+
+  .Hidden {
+    position: relative;
+    background-color: white;
+    width: 100%;
+    height: 30rem;
+    margin-top: 0;
+    top: -40px;
   }
 
 `
