@@ -1,6 +1,15 @@
 import { useState } from 'react';
-import styled from 'styled-components';
+import styled, {keyframes} from 'styled-components';
 
+const dropdownAnimation = keyframes`
+  0% {
+    transform: translateY(-30%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+`
 
 function HeaderRight ({toParentIsMouseOver}) {
 
@@ -442,13 +451,13 @@ const HeaderRightWrap = styled.div`
 
   .HeaderRightWrapUlLiUl {
     display: ${props=>props.isMouseOver===true?'auto':'none'};
-    height: 126.065px;
     padding-top: 15px;
     margin-top: 0px;
     padding-bottom: 0px;
     margin-bottom: 0px;
     position: absolute;
     left: 0;
+    height: 170px;
     top: 100%;
     width: 100%;
     margin: 0 auto;
@@ -458,6 +467,8 @@ const HeaderRightWrap = styled.div`
     margin-block-end: 0px;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
+    transition: height 0.3s ease;
+    animation: ${dropdownAnimation} 0.3s ease;
   }
 
   .HeaderRightWrapUlLiUlLi {
@@ -517,6 +528,7 @@ const HeaderRightWrap = styled.div`
     margin-block-end: 0px;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
+    animation: ${dropdownAnimation} 0.3s ease;
   }
 
   .HeaderRightWrapUlLi2UlLi {
@@ -591,6 +603,7 @@ const HeaderRightWrap = styled.div`
     margin-block-end: 0px;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
+    animation: ${dropdownAnimation} 0.3s ease;
   }
 
   .HeaderRightWrapUlLi3UlLi {
@@ -652,6 +665,7 @@ const HeaderRightWrap = styled.div`
     margin-block-end: 0px;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
+    animation: ${dropdownAnimation} 0.3s ease;
   }
 
   .HeaderRightWrapUlLi4UlLi {
@@ -763,6 +777,7 @@ const HeaderRightWrap = styled.div`
     margin-block-end: 0px;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
+    animation: ${dropdownAnimation} 0.3s ease;
   }
 
   .HeaderRightWrapUlLi5UlLi {
@@ -874,6 +889,7 @@ const HeaderRightWrap = styled.div`
     margin-block-end: 0px;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
+    animation: ${dropdownAnimation} 0.3s ease;
   }
 
   .HeaderRightWrapUlLi7UlLi {

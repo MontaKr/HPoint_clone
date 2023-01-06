@@ -1,8 +1,20 @@
 import HeaderLeft from './HeaderLeft';
 import HeaderTop from './HeaderTop';
-import styled from 'styled-components';
+import styled, {keyframes} from 'styled-components';
 import HeaderRight from './HeaderRight';
 import { useState } from 'react';
+
+
+//마우스오버 애니메이션
+const dropdownAnimation = keyframes`
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+`
 
 function Header () {
 
@@ -57,6 +69,7 @@ const HeaderRoot = styled.div`
     height: 30rem;
     margin-top: 0;
     top: -40px;
+    animation: ${dropdownAnimation} 0.3s ease;
   }
 
 `
