@@ -2,18 +2,25 @@ import HeaderLeft from './HeaderLeft';
 import HeaderTop from './HeaderTop';
 import styled from 'styled-components';
 import HeaderRight from './HeaderRight';
+import { useState } from 'react';
 
 function Header () {
+
+  // 자식에게 mouseover state 받기
+  const [pIsMouseOver, setPisMouseOver] = useState(false)
+
+  const toParentIsMouseOver = (MouseOverValid) => {
+    setPisMouseOver(MouseOverValid)
+  }
+
   return (
-    <HeaderRoot>
+    <HeaderRoot pIsMouseOver={pIsMouseOver}>
       <div className='HeaderWrap'>
         <HeaderTop/>
         <HeaderLeft/>
-        <HeaderRight/>
+        <HeaderRight toParentIsMouseOver={toParentIsMouseOver}/>
       </div>
-      <div className='Hidden'>
-
-      </div>
+      <div className='Hidden' />
     </HeaderRoot>
   )
 }
@@ -43,6 +50,7 @@ const HeaderRoot = styled.div`
   }
 
   .Hidden {
+    display: ${props=>props.pIsMouseOver===true?'auto':'none'};
     position: relative;
     background-color: white;
     width: 100%;

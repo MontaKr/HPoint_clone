@@ -1,9 +1,28 @@
+import { useState } from 'react';
 import styled from 'styled-components';
 
 
-function HeaderRight () {
+function HeaderRight ({toParentIsMouseOver}) {
+
+  //마우스오버
+    // 마우스오버 여부
+    const [isMouseOver, setIsMouseOver] = useState(false)
+
+    // 마우스오버될 때 true 리턴
+    const ActMouseOver = () => {
+      setIsMouseOver(true)
+    }
+
+    // 마우스리브될 때 false 리턴
+    const ActMouseLeave = () => {
+      setIsMouseOver(false)
+    }
+  
+  // 부모에게 mouseover state 전달
+  toParentIsMouseOver(isMouseOver)
+
   return (
-    <HeaderRightWrap>
+    <HeaderRightWrap isMouseOver={isMouseOver} onMouseEnter={ActMouseOver}>
       <ul className='HeaderRightWrapUl'>
         <li className='HeaderRightWrapUlLi'>
           <div className='HeaderRightWrapUlLiDiv'>
@@ -422,6 +441,7 @@ const HeaderRightWrap = styled.div`
   }
 
   .HeaderRightWrapUlLiUl {
+    display: ${props=>props.isMouseOver===true?'auto':'none'};
     height: 126.065px;
     padding-top: 15px;
     margin-top: 0px;
@@ -480,6 +500,7 @@ const HeaderRightWrap = styled.div`
   }
 
   .HeaderRightWrapUlLi2Ul {
+    display: ${props=>props.isMouseOver===true?'auto':'none'};
     height: 169.769px;
     padding-top: 15px;
     margin-top: 0px;
@@ -553,6 +574,7 @@ const HeaderRightWrap = styled.div`
   }
 
   .HeaderRightWrapUlLi3Ul {
+    display: ${props=>props.isMouseOver===true?'auto':'none'};
     height: 169.769px;
     padding-top: 15px;
     margin-top: 0px;
@@ -613,6 +635,7 @@ const HeaderRightWrap = styled.div`
   }
 
   .HeaderRightWrapUlLi4Ul {
+    display: ${props=>props.isMouseOver===true?'auto':'none'};
     height: 169.769px;
     padding-top: 15px;
     margin-top: 0px;
@@ -723,6 +746,7 @@ const HeaderRightWrap = styled.div`
   }
 
   .HeaderRightWrapUlLi5Ul {
+    display: ${props=>props.isMouseOver===true?'auto':'none'};
     height: 169.769px;
     padding-top: 15px;
     margin-top: 0px;
@@ -833,6 +857,7 @@ const HeaderRightWrap = styled.div`
   }
 
   .HeaderRightWrapUlLi7Ul {
+    display: ${props=>props.isMouseOver===true?'auto':'none'};
     height: 169.769px;
     padding-top: 15px;
     margin-top: 0px;
