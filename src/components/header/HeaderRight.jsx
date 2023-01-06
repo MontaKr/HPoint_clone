@@ -1,6 +1,9 @@
 import { useState } from 'react';
 import styled, {keyframes} from 'styled-components';
+import $ from 'jquery';
 
+
+//마우스오버 애니메이션
 const dropdownAnimation = keyframes`
   0% {
     transform: translateY(-30%);
@@ -12,6 +15,8 @@ const dropdownAnimation = keyframes`
 `
 
 function HeaderRight ({toParentIsMouseOver}) {
+
+
 
   //마우스오버
     // 마우스오버 여부
@@ -26,216 +31,223 @@ function HeaderRight ({toParentIsMouseOver}) {
     const ActMouseLeave = () => {
       setIsMouseOver(false)
     }
-  
+
+    $(document).mouseleave(function () {
+      ActMouseLeave();
+    });
+
+
   // 부모에게 mouseover state 전달
   toParentIsMouseOver(isMouseOver)
 
   return (
-    <HeaderRightWrap isMouseOver={isMouseOver} onMouseEnter={ActMouseOver}>
-      <ul className='HeaderRightWrapUl'>
-        <li className='HeaderRightWrapUlLi'>
-          <div className='HeaderRightWrapUlLiDiv'>
-            <a className='HeaderRightWrapUlLiDivAnchor'>
-              소개
-            </a>
-          </div>
-          <ul className='HeaderRightWrapUlLiUl'>
-            <li className='HeaderRightWrapUlLiUlLi'>
-              <a className='HeaderRightWrapUlLiUlLiAnchor'>
-                H.Point소개
+    <>
+      <HeaderRightWrap isMouseOver={isMouseOver} onMouseEnter={ActMouseOver}>
+        <ul className='HeaderRightWrapUl'>
+          <li className='HeaderRightWrapUlLi'>
+            <div className='HeaderRightWrapUlLiDiv'>
+              <a className='HeaderRightWrapUlLiDivAnchor'>
+                소개
               </a>
-            </li>
-            <li className='HeaderRightWrapUlLiUlLi2'>
-              <a className='HeaderRightWrapUlLiUlLi2Anchor'>
-                사용처안내
+            </div>
+            <ul className='HeaderRightWrapUlLiUl'>
+              <li className='HeaderRightWrapUlLiUlLi'>
+                <a className='HeaderRightWrapUlLiUlLiAnchor'>
+                  H.Point소개
+                </a>
+              </li>
+              <li className='HeaderRightWrapUlLiUlLi2'>
+                <a className='HeaderRightWrapUlLiUlLi2Anchor'>
+                  사용처안내
+                </a>
+              </li>
+              <li className='HeaderRightWrapUlLiUlLi3'>
+                <a className='HeaderRightWrapUlLiUlLi3Anchor'>
+                  가입혜택
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li className='HeaderRightWrapUlLi2'>
+            <div className='HeaderRightWrapUlLi2Div'>
+              <a className='HeaderRightWrapUlLi2DivAnchor'>
+                쌓기
               </a>
-            </li>
-            <li className='HeaderRightWrapUlLiUlLi3'>
-              <a className='HeaderRightWrapUlLiUlLi3Anchor'>
-                가입혜택
+            </div>
+            <ul className='HeaderRightWrapUlLi2Ul'>
+              <li className='HeaderRightWrapUlLi2UlLi'>
+                <a className='HeaderRightWrapUlLi2UlLiAnchor'>
+                  즐길거리
+                </a>
+              </li>
+              <li className='HeaderRightWrapUlLi2UlLi2'>
+                <a className='HeaderRightWrapUlLi2UlLi2Anchor'>
+                  전환하기
+                </a>
+              </li>
+              <li className='HeaderRightWrapUlLi2UlLi3'>
+                <a className='HeaderRightWrapUlLi2UlLi3Anchor'>
+                  충전하기
+                </a>
+              </li>
+              <li className='HeaderRightWrapUlLi2UlLi4'>
+                <a className='HeaderRightWrapUlLi2UlLi4Anchor'>
+                  영수증/쿠폰
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li className='HeaderRightWrapUlLi3'>
+            <div className='HeaderRightWrapUlLi3Div'>
+              <a className='HeaderRightWrapUlLi3DivAnchor'>
+                쓰기
               </a>
-            </li>
-          </ul>
-        </li>
-        <li className='HeaderRightWrapUlLi2'>
-          <div className='HeaderRightWrapUlLi2Div'>
-            <a className='HeaderRightWrapUlLi2DivAnchor'>
-              쌓기
-            </a>
-          </div>
-          <ul className='HeaderRightWrapUlLi2Ul'>
-            <li className='HeaderRightWrapUlLi2UlLi'>
-              <a className='HeaderRightWrapUlLi2UlLiAnchor'>
-                즐길거리
+            </div>
+            <ul className='HeaderRightWrapUlLi3Ul'>
+              <li className='HeaderRightWrapUlLi3UlLi'>
+                <a className='HeaderRightWrapUlLi3UlLiAnchor'>
+                  포인트샵
+                </a>
+              </li>
+              <li className='HeaderRightWrapUlLi3UlLi2'>
+                <a className='HeaderRightWrapUlLi3UlLi2Anchor'>
+                  선물하기
+                </a>
+              </li>
+              <li className='HeaderRightWrapUlLi3UlLi3'>
+                <a className='HeaderRightWrapUlLi3UlLi3Anchor'>
+                  기부하기
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li className='HeaderRightWrapUlLi4'>
+            <div className='HeaderRightWrapUlLi4Div'>
+              <a className='HeaderRightWrapUlLi4DivAnchor'>
+                혜택
               </a>
-            </li>
-            <li className='HeaderRightWrapUlLi2UlLi2'>
-              <a className='HeaderRightWrapUlLi2UlLi2Anchor'>
-                전환하기
+            </div>
+            <ul className='HeaderRightWrapUlLi4Ul'>
+              <li className='HeaderRightWrapUlLi4UlLi'>
+                <a className='HeaderRightWrapUlLi4UlLiAnchor'>
+                  이벤트
+                </a>
+              </li>
+              <li className='HeaderRightWrapUlLi4UlLi2'>
+                <a className='HeaderRightWrapUlLi4UlLi2Anchor'>
+                  쿠폰
+                </a>
+              </li>
+              <li className='HeaderRightWrapUlLi4UlLi3'>
+                <a className='HeaderRightWrapUlLi4UlLi3Anchor'>
+                  플러스포인트
+                </a>
+              </li>
+              <li className='HeaderRightWrapUlLi4UlLi4'>
+                <a className='HeaderRightWrapUlLi4UlLi4Anchor'>
+                  미션
+                </a>
+              </li>
+              <li className='HeaderRightWrapUlLi4UlLi5'>
+                <a className='HeaderRightWrapUlLi4UlLi5Anchor'>
+                  제휴카드안내
+                </a>
+              </li>
+              <li className='HeaderRightWrapUlLi4UlLi6'>
+                <a className='HeaderRightWrapUlLi4UlLi6Anchor'>
+                  후크체험단
+                </a>
+              </li>
+              <li className='HeaderRightWrapUlLi4UlLi7'>
+                <a className='HeaderRightWrapUlLi4UlLi7Anchor'>
+                  Apple
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li className='HeaderRightWrapUlLi5'>
+            <div className='HeaderRightWrapUlLi5Div'>
+              <a className='HeaderRightWrapUlLi5DivAnchor'>
+                클럽
               </a>
-            </li>
-            <li className='HeaderRightWrapUlLi2UlLi3'>
-              <a className='HeaderRightWrapUlLi2UlLi3Anchor'>
-                충전하기
+            </div>
+            <ul className='HeaderRightWrapUlLi5Ul'>
+              <li className='HeaderRightWrapUlLi5UlLi'>
+                <a className='HeaderRightWrapUlLi5UlLiAnchor'>
+                  클럽프렌즈
+                </a>
+              </li>
+              <li className='HeaderRightWrapUlLi5UlLi2'>
+                <a className='HeaderRightWrapUlLi5UlLi2Anchor'>
+                  클럽웨딩
+                </a>
+              </li>
+              <li className='HeaderRightWrapUlLi5UlLi3'>
+                <a className='HeaderRightWrapUlLi5UlLi3Anchor'>
+                  맘스클럽
+                </a>
+              </li>
+              <li className='HeaderRightWrapUlLi5UlLi4'>
+                <a className='HeaderRightWrapUlLi5UlLi4Anchor'>
+                  헤이,마이 뷰티
+                </a>
+              </li>
+              <li className='HeaderRightWrapUlLi5UlLi5'>
+                <a className='HeaderRightWrapUlLi5UlLi5Anchor'>
+                  클럽아디다스
+                </a>
+              </li>
+              <li className='HeaderRightWrapUlLi5UlLi6'>
+                <a className='HeaderRightWrapUlLi5UlLi6Anchor'>
+                  클럽트레블
+                </a>
+              </li>
+              <li className='HeaderRightWrapUlLi5UlLi7'>
+                <a className='HeaderRightWrapUlLi5UlLi7Anchor'>
+                  클럽육학다식
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li className='HeaderRightWrapUlLi6'>
+            <div className='HeaderRightWrapUlLi6Div'>
+              <a className='HeaderRightWrapUlLi6DivAnchor'>
+                H.Point Pay
               </a>
-            </li>
-            <li className='HeaderRightWrapUlLi2UlLi4'>
-              <a className='HeaderRightWrapUlLi2UlLi4Anchor'>
-                영수증/쿠폰
+            </div>
+          </li>
+          <li className='HeaderRightWrapUlLi7'>
+            <div className='HeaderRightWrapUlLi7Div'>
+              <a className='HeaderRightWrapUlLi7DivAnchor'>
+                고객센터
               </a>
-            </li>
-          </ul>
-        </li>
-        <li className='HeaderRightWrapUlLi3'>
-          <div className='HeaderRightWrapUlLi3Div'>
-            <a className='HeaderRightWrapUlLi3DivAnchor'>
-              쓰기
-            </a>
-          </div>
-          <ul className='HeaderRightWrapUlLi3Ul'>
-            <li className='HeaderRightWrapUlLi3UlLi'>
-              <a className='HeaderRightWrapUlLi3UlLiAnchor'>
-                포인트샵
-              </a>
-            </li>
-            <li className='HeaderRightWrapUlLi3UlLi2'>
-              <a className='HeaderRightWrapUlLi3UlLi2Anchor'>
-                선물하기
-              </a>
-            </li>
-            <li className='HeaderRightWrapUlLi3UlLi3'>
-              <a className='HeaderRightWrapUlLi3UlLi3Anchor'>
-                기부하기
-              </a>
-            </li>
-          </ul>
-        </li>
-        <li className='HeaderRightWrapUlLi4'>
-          <div className='HeaderRightWrapUlLi4Div'>
-            <a className='HeaderRightWrapUlLi4DivAnchor'>
-              혜택
-            </a>
-          </div>
-          <ul className='HeaderRightWrapUlLi4Ul'>
-            <li className='HeaderRightWrapUlLi4UlLi'>
-              <a className='HeaderRightWrapUlLi4UlLiAnchor'>
-                이벤트
-              </a>
-            </li>
-            <li className='HeaderRightWrapUlLi4UlLi2'>
-              <a className='HeaderRightWrapUlLi4UlLi2Anchor'>
-                쿠폰
-              </a>
-            </li>
-            <li className='HeaderRightWrapUlLi4UlLi3'>
-              <a className='HeaderRightWrapUlLi4UlLi3Anchor'>
-                플러스포인트
-              </a>
-            </li>
-            <li className='HeaderRightWrapUlLi4UlLi4'>
-              <a className='HeaderRightWrapUlLi4UlLi4Anchor'>
-                미션
-              </a>
-            </li>
-            <li className='HeaderRightWrapUlLi4UlLi5'>
-              <a className='HeaderRightWrapUlLi4UlLi5Anchor'>
-                제휴카드안내
-              </a>
-            </li>
-            <li className='HeaderRightWrapUlLi4UlLi6'>
-              <a className='HeaderRightWrapUlLi4UlLi6Anchor'>
-                후크체험단
-              </a>
-            </li>
-            <li className='HeaderRightWrapUlLi4UlLi7'>
-              <a className='HeaderRightWrapUlLi4UlLi7Anchor'>
-                Apple
-              </a>
-            </li>
-          </ul>
-        </li>
-        <li className='HeaderRightWrapUlLi5'>
-          <div className='HeaderRightWrapUlLi5Div'>
-            <a className='HeaderRightWrapUlLi5DivAnchor'>
-              클럽
-            </a>
-          </div>
-          <ul className='HeaderRightWrapUlLi5Ul'>
-            <li className='HeaderRightWrapUlLi5UlLi'>
-              <a className='HeaderRightWrapUlLi5UlLiAnchor'>
-                클럽프렌즈
-              </a>
-            </li>
-            <li className='HeaderRightWrapUlLi5UlLi2'>
-              <a className='HeaderRightWrapUlLi5UlLi2Anchor'>
-                클럽웨딩
-              </a>
-            </li>
-            <li className='HeaderRightWrapUlLi5UlLi3'>
-              <a className='HeaderRightWrapUlLi5UlLi3Anchor'>
-                맘스클럽
-              </a>
-            </li>
-            <li className='HeaderRightWrapUlLi5UlLi4'>
-              <a className='HeaderRightWrapUlLi5UlLi4Anchor'>
-                헤이,마이 뷰티
-              </a>
-            </li>
-            <li className='HeaderRightWrapUlLi5UlLi5'>
-              <a className='HeaderRightWrapUlLi5UlLi5Anchor'>
-                클럽아디다스
-              </a>
-            </li>
-            <li className='HeaderRightWrapUlLi5UlLi6'>
-              <a className='HeaderRightWrapUlLi5UlLi6Anchor'>
-                클럽트레블
-              </a>
-            </li>
-            <li className='HeaderRightWrapUlLi5UlLi7'>
-              <a className='HeaderRightWrapUlLi5UlLi7Anchor'>
-                클럽육학다식
-              </a>
-            </li>
-          </ul>
-        </li>
-        <li className='HeaderRightWrapUlLi6'>
-          <div className='HeaderRightWrapUlLi6Div'>
-            <a className='HeaderRightWrapUlLi6DivAnchor'>
-              H.Point Pay
-            </a>
-          </div>
-        </li>
-        <li className='HeaderRightWrapUlLi7'>
-          <div className='HeaderRightWrapUlLi7Div'>
-            <a className='HeaderRightWrapUlLi7DivAnchor'>
-              고객센터
-            </a>
-          </div>
-          <ul className='HeaderRightWrapUlLi7Ul'>
-            <li className='HeaderRightWrapUlLi7UlLi'>
-              <a className='HeaderRightWrapUlLi7UlLiAnchor'>
-                FAQ
-              </a>
-            </li>
-            <li className='HeaderRightWrapUlLi7UlLi2'>
-              <a className='HeaderRightWrapUlLi7UlLi2Anchor'>
-                1:1문의
-              </a>
-            </li>
-            <li className='HeaderRightWrapUlLi7UlLi3'>
-              <a className='HeaderRightWrapUlLi7UlLi3Anchor'>
-                공지사항
-              </a>
-            </li>
-            <li className='HeaderRightWrapUlLi7UlLi4'>
-              <a className='HeaderRightWrapUlLi7UlLi4Anchor'>
-                제휴문의
-              </a>
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </HeaderRightWrap>
+            </div>
+            <ul className='HeaderRightWrapUlLi7Ul'>
+              <li className='HeaderRightWrapUlLi7UlLi'>
+                <a className='HeaderRightWrapUlLi7UlLiAnchor'>
+                  FAQ
+                </a>
+              </li>
+              <li className='HeaderRightWrapUlLi7UlLi2'>
+                <a className='HeaderRightWrapUlLi7UlLi2Anchor'>
+                  1:1문의
+                </a>
+              </li>
+              <li className='HeaderRightWrapUlLi7UlLi3'>
+                <a className='HeaderRightWrapUlLi7UlLi3Anchor'>
+                  공지사항
+                </a>
+              </li>
+              <li className='HeaderRightWrapUlLi7UlLi4'>
+                <a className='HeaderRightWrapUlLi7UlLi4Anchor'>
+                  제휴문의
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </HeaderRightWrap>
+    </>
   )
 }
 
